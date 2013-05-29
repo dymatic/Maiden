@@ -1,0 +1,21 @@
+import System.IO
+import System.Environment
+
+-- Archimedes Imports
+import Archimedes.Sequence.Manipulate
+import Archimedes.Sequence.Clarify
+import Archimedes.Sequence.Functional
+
+-- Example file input
+-- y-n:Install Emacs?$apt-get install emacs$nothing
+splitOn :: [a] -> a -> [[a]]
+splitOn [] _ = []
+splitOn x y = before x y : (map ((flip afterList) y) x)
+
+parseline :: String -> (String,[(String,String)])
+parseline x = (prompt, (zip options commands))
+  where tk1 = splitOn x '$'
+        tk2 = splitOn tk1 ':'
+        prompt = last tk2
+        options = splitOn (init tk2) '-'
+        commands = tail tk1

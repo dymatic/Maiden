@@ -1,0 +1,7 @@
+===Maiden
+Maiden is a program for generating directory structures from textual input. Capable of comrpessing directories and creating an aesthetically pleasing input file which doulbes as a map, Maiden is useful for installers and Shell Scripters. Maiden is written in Haskell, but relies on the bash shell.
+-
+
+===Meta
+Maiden is free software, licensed under the GNU General Public License, revision 2
+-
